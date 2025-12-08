@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trading Demo</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">TradeLite</div>
+    <nav class="nav">
+      <a href="#dashboard">Dashboard</a>
+      <a href="#orders">Orders</a>
+      <a href="#watchlist">Watchlist</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="grid">
+      <!-- Left: Chart + Ticker -->
+      <div class="panel panel-chart">
+        <div class="ticker">
+          <select id="symbolSelect">
+            <option value="AAPL">AAPL</option>
+            <option value="MSFT">MSFT</option>
+            <option value="GOOGL">GOOGL</option>
+            <option value="TSLA">TSLA</option>
+          </select>
+          <div class="price-line">
+            <span id="lastPrice">—</span>
+            <span id="changePct" class="chip">—</span>
+          </div>
+        </div>
+        <canvas id="chart" width="900" height="360" aria-label="Price chart"></canvas>
+        <div class="chart-toolbar">
+          <button data-res="30">Last 30</button>
+          <button data-res="60">Last 60</button>
+          <button data-res="120">Last 120</button>
+        </div>
+      </div>
+
+      <!-- Right: Order panel -->
+      <div class="panel panel-order" id="orders">
+        <h2>Place order</h2>
+        <form id="orderForm">
+          <div class="row">
+            <label>Side</label>
+            <div class="seg">
+              <label><input type="radio" name="side" value="BUY" checked/> BUY</label>
+              <label><input type="radio" name="side" value="SELL"/> SELL</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <label>Order type</label>
+            <select id="orderType">
+              <option value="MARKET">Market</option>
+              <option value="LIMIT">Limit</option>
+              <option value="SL">Stop Loss</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <label>Quantity</label>
+            <input type="number" id="qty" min="1" step="1" placeholder="e.g., 10" required/>
+          </div>
+
+          <div class="row" id="priceRow">
+            <label>Price</label>
+            <input type="number" id="price" min="0" step="0.01" placeholder="e.g., 150.50"/>
+          </div>
+
+          <div class="row" id="triggerRow" style="display:none;">
+            <label>Trigger</label>
+            <input type="number" id="trigger" min="0" step="0.01" placeholder="e.g., 148.00"/>
+          </div>
+
+          <div class="row">
+            <label>Symbol</label>
+            <input type="text" id="symbolInput" value="AAPL"/>
+          </div>
+
+          <button type="submit" class="btn-primary">Submit order</button>
+          <div id="orderMsg" class="msg"></div>
+        </form>
+
+        <h3>Quick P&L calculator</h3>
+        <div class="calc">
+          <input type="number" id="calcEntry" step="0.01" placeholder="Entry"/>
+          <input type="number" id="calcExit" step="0.01" placeholder="Exit"/>
+          <input type="number" id="calcQty" step="1" placeholder="Qty"/>
+          <button id="calcBtn">Calculate</button>
+          <div id="calcResult" class="msg"></div>
+        </div>
+      </div>
+
+      <!-- Bottom: Watchlist -->
+      <div class="panel panel-watchlist" id="watchlist">
+        <h2>Watchlist</h2>
+        <form id="watchForm">
+          <input id="watchSymbol" placeholder="Add symbol (e.g., AAPL)" />
+          <button type="submit">Add</button>
+        </form>
+        <ul id="watchList"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>&copy; 2025 TradeLite Demo</span>
+    <span>Front-end only — simulated data</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
