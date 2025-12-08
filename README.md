@@ -52,7 +52,7 @@ It simulates live price charts, order placement, watchlists, and a quick P&L cal
 ## 📬 Contact
 
 Created by **Santha Anu Hashini**  
-- 🌐 [GitHub Profile](https://github.com/your-username)  
+- 🌐 https://github.com/anuhari872-rgb
   
 
 ---
