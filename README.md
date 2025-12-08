@@ -2,6 +2,8 @@
 
 https://anuhari872-rgb.github.io/Stock-Market-Trading/
 
+---
+
 # 📈 TradeLite – Stock Market Trading Demo
 
 A front‑end demo of a trading platform built with **HTML, CSS, and JavaScript**.  
@@ -42,6 +44,7 @@ It simulates live price charts, order placement, watchlists, and a quick P&L cal
 ## 📸 Screenshots
 
 
+<img width="1898" height="886" alt="image" src="https://github.com/user-attachments/assets/e52e32c6-3fcb-40cc-9761-dc010846f90e" />
 
 ---
 
@@ -50,6 +53,6 @@ It simulates live price charts, order placement, watchlists, and a quick P&L cal
 
 Created by **Santha Anu Hashini**  
 - 🌐 [GitHub Profile](https://github.com/your-username)  
-- 💼 [LinkedIn](https://linkedin.com/in/your-link)  
+  
 
 ---
